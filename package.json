@@ -1,7 +1,7 @@
 {
   "name": "create-react-resource",
-  "version": "1.0.8",
-  "description": "create resource object which is to be used with react suspense",
+  "version": "1.0.10",
+  "description": "create resource object which is to be used with react suspense and error boundaries",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,9 @@
     "react","suspense"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/stanleyjohnson/create-react-resource"
+  }
 }

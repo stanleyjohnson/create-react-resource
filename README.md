@@ -138,12 +138,11 @@ if a string lsKey is passed in the config object, it persists the cache to local
 1. Generally, server data should be considered immutable by your react components. The 'resources' can be used anywhere and mutation can cause hard to find bugs. Possible solutions include using Object.freeze ( deep freezing if possible) in dev mode. This is pending.
 
 2. It may happen that you are passing arguments to your service which are not technically keys.
-These are still considered as keys in the map which createDeclarativeResource uses internally.
+These are still considered as keys in the map which createDeclarativeResource uses internally and the map gets nested with each key. This optimization has been ignored in favour of a simpler api.
  eg.
 ```
     const dataService = (userEmail, param1, someConstant, param2) => ...
 ```
-This optimization has been ignored in favour of a simpler api. Memory tests are pending.
 
 3. Any value can be used as key ( including arrays and objects which could potentially be some react state ). Ideally they should be garbage collected if they are not referenced. One possible implementation is to find the types of keys on the first pass and use WeakMap instead of Map. This is pending.
 
